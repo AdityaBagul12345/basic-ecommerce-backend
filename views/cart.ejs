@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <!-- Tailwind CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.3.2/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="flex flex-col min-h-screen">
+    <!-- Navigation Bar -->
+    <div class="flex justify-end space-x-9 px-20 py-2 ">
+        <a href="/shop" class="hover:underline">Shop</a>
+        <a href="/cart" class="hover:underline">Cart</a>
+        <a href="#" class="hover:underline">My Account</a>
+        <a href="/users/logout" class="font-bold text-red-600 hover:underline">Logout</a>
+    </div>
+
+    <!-- Cart Items Section -->
+    <div class="w-full flex flex-col items-center py-10 px-20">
+        <h1 class="text-3xl mb-8">Your Cart</h1>
+
+        <% if (cartItems.length > 0) { %>
+            <div class="w-full flex flex-col gap-8">
+                <% cartItems.forEach(function(item){ %>
+                    <div class="flex items-center justify-between w-full border-b pb-4">
+                        <!-- Product Image -->
+                        <div class="w-24 h-24 bg-gray-100 flex items-center justify-center">
+                            <img class="h-full" src="data:image/jpeg;base64,<%= item.image.toString('base64') %>" alt="<%= item.name %>">
+                        </div>
+                        <!-- Product Details -->
+                        <div class="flex-1 px-4">
+                            <h3 class="text-xl"><%= item.name %></h3>
+                            <h4 class="text-lg">₹ <%= item.price %></h4>
+                        </div>
+                        <!-- Product Actions -->
+                        <div class="flex items-center gap-4">
+                            <form action="/remove-from-cart/<%= item._id %>" method="POST">
+                                <button type="submit" class="text-red-600 hover:underline">Remove</button>
+                            </form>
+                        </div>
+                    </div>
+                <% }) %>
+            </div>
+        <% } else { %>
+            <p>Your cart is empty. <a href="/shop" class="text-blue-500 hover:underline">Shop now</a></p>
+        <% } %>
+    </div>
+</body>
+</html>

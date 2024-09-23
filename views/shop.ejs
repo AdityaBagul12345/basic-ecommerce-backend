@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.0.0/remixicon.min.css" rel="stylesheet">
+</head>
+
+<body class="flex flex-col min-h-screen">
+    <!-- Navigation Bar -->
+    <div class="flex justify-end space-x-9 px-20 py-2 ">
+        <a href="/shop" class="hover:underline">Shop</a>
+        <a href="/cart" class="hover:underline">Cart</a>
+        <a href="#" class="hover:underline">MyAccount</a>
+        <a href="/users/logout" class="font-bold text-red-600 hover:underline">Logout</a>
+    </div>
+ 
+    <div class="flex flex-1">
+        <!-- Sidebar -->
+        <div class="sm:block md:w-[25%] fixed top-0 left-0 h-screen px-20 py-10 overflow-y-auto border-r ">
+            <h3 class="p-1">Sort Items by</h3>
+            <div class="flex  gap-2">
+                <form action="/shop" method="GET" class="flex items-center flex-col gap-2">
+                    <!-- Sort Field -->
+                    <select class="border-[1px] px-1 py-1" name="sortBy" id="">
+                        <option value="price" <%= sortBy === 'price' ? 'selected' : '' %>>Price</option>
+                        <option value="discount" <%= sortBy === 'discount' ? 'selected' : '' %>>Discount</option>
+                    </select>
+                    <button type="submit" class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition duration-200">Sort</button>
+                </form>
+            </div>
+
+            <!-- Links Section -->
+            <!-- <div class="flex flex-col mt-20">
+                <a class="block w-fit mb-2" href="#">New Collection</a>
+                <a class="block w-fit mb-2" href="#">All Products</a>
+                <a class="block w-fit mb-2" href="#">Discounted Products</a>
+            </div> -->
+
+            <!-- Filter Section -->
+            <!-- <div class="mt-32">
+                <a class="block w-fit mb-2" href="#">Filter by :</a>
+                <a class="block w-fit mb-2" href="#">Availability</a>
+                <a class="block w-fit mb-2" href="#">Discount</a>
+            </div> -->
+        </div>
+
+        <!-- Products Section -->
+        <div class="w-[75%] ml-[25%] flex flex-col gap-5 px-20 py-5 overflow-y-auto">
+            <div class="flex flex-wrap items-start gap-8">
+                <!-- Product Card -->
+                <% products.forEach(function(product){ %>
+                    <div class="w-60">
+                        <!-- Product Image -->
+                        <div class="w-full h-52 flex items-center justify-center bg-[<%=product.bgcolor%>]">
+                            <img class="h-[12rem]" src="data:image/jpeg;base64,<%= product.image.toString('base64') %>" alt="<%= product.name %>">
+                        </div>
+                        <!-- Product Info -->
+                        <div class="relative flex justify-between bg-[<%=product.panelcolor%>] items-center px-4 py-4 text-[<%=product.textcolor%>]">
+                            <div>
+                                <h3><%= product.name %></h3>
+                                <h4>₹ <%= product.price %></h4>
+                            </div>
+                            <!-- Add to Cart Button -->
+                            <form action="/add-to-cart/<%= product._id %>" method="POST">
+                                <button type="submit" class="absolute top-11 right-9 mt-[-15px] mr-[-15px] w-8 h-8 flex items-center justify-center rounded-full bg-white text-white hover:bg-blue-600 transition duration-200">
+                                    <i class="ri-add-line text-black"></i>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                <% }) %>
+            </div>
+        </div>
+    </div>
+    
+</body>
+
+</html>
