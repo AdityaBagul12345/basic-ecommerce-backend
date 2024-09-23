@@ -1,6 +1,13 @@
 # Basic E-commerce Backend
 A beginner-level e-commerce backend made with Node.js, Express, and MongoDB. This project provides features for managing an online store, following the MVC (Model-View-Controller) architecture.This project totally focused on backend how backend works not in developing UI
 
+# Output 
+![Screenshot 2024-09-24 010111](https://github.com/user-attachments/assets/384eddb2-e055-4cf4-9824-3d256cb745a6)
+
+![Screenshot 2024-09-24 010213](https://github.com/user-attachments/assets/07886a0c-2dd2-4738-a27c-55b85e450789)
+
+![Screenshot 2024-09-24 010247](https://github.com/user-attachments/assets/14c3d983-f261-40d7-b0c7-9161813ea326)
+
 ## Features
 - **User Authentication**: Register and login users using JWT.
 - **Product Management**: Create, read, update, and delete products.
