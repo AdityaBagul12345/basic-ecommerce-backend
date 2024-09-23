@@ -1,7 +1,7 @@
 # Basic E-commerce Backend
-A beginner-level e-commerce backend made with Node.js, Express, and MongoDB. This project provides features for managing an online store, following the MVC (Model-View-Controller) architecture.This project totally focused on backend how backend works not in developing UI. It is just concept of building simple online bag shop.
+A beginner-level e-commerce backend made with Node.js, Express, and MongoDB. This project provides features for managing an online store, following the MVC (Model-View-Controller) architecture.This project totally focused on learning backend conecpts how backend works not in developing UI. It is just concept of building simple online bag shop Created this project while learning backend developement with Sheryians Coding School.
 
-# Output 
+# Output Images
 ![Screenshot 2024-09-24 010111](https://github.com/user-attachments/assets/384eddb2-e055-4cf4-9824-3d256cb745a6)
 
 ![Screenshot 2024-09-24 010213](https://github.com/user-attachments/assets/07886a0c-2dd2-4738-a27c-55b85e450789)
@@ -14,7 +14,7 @@ A beginner-level e-commerce backend made with Node.js, Express, and MongoDB. Thi
 - **Cart Functionality**: Users can add products to their cart.
 - **Pagination**: Efficiently display products in manageable sets.
 - **EJS Templating**: Render views dynamically with EJS.
-- **Tailwind CSS**: Styled for a modern, responsive layout.
+- **Tailwind CSS**: Styled for a modern layout.
 
 ## Technologies Used
 - Node.js
