@@ -9,7 +9,7 @@ A beginner-level e-commerce backend made with Node.js, Express, and MongoDB. Thi
 ![Screenshot 2024-09-24 010247](https://github.com/user-attachments/assets/14c3d983-f261-40d7-b0c7-9161813ea326)
 
 ## Features
-- **User Authentication**: Register and login users using JWT.
+- **User Authentication**: Register and login users using JWT with bcrypt for password Hash.
 - **Product Management**: Create, read, update, and delete products.
 - **Cart Functionality**: Users can add products to their cart.
 - **Pagination**: Efficiently display products in manageable sets.
